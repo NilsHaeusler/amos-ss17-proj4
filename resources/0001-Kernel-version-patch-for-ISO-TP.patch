@@ -1,0 +1,26 @@
+From d29ffa27af73b5c74d51679a6e54d38e3624c8c1 Mon Sep 17 00:00:00 2001
+From: Florian Bauer <florian.bauer.dev@gmail.com>
+Date: Fri, 23 Jun 2017 16:18:27 +0200
+Subject: [PATCH] Kernel version patch to successfully execute `make` on Ubuntu
+ 14.04 (TravisCI)
+
+---
+ net/can/isotp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/net/can/isotp.c b/net/can/isotp.c
+index 6a285c1..b145a8e 100644
+--- a/net/can/isotp.c
++++ b/net/can/isotp.c
+@@ -1109,7 +1109,7 @@ static int isotp_bind(struct socket *sock, struct sockaddr *uaddr, int len)
+ 
+ 	can_rx_register(dev, addr->can_addr.tp.rx_id,
+ 			SINGLE_MASK(addr->can_addr.tp.rx_id), isotp_rcv, sk,
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,9,11)
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,4,0)
+ 			"isotp", sk);
+ #else
+ 			"isotp");
+-- 
+2.7.4
+

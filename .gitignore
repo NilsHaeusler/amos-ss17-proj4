@@ -27,3 +27,22 @@
 *.exe
 *.out
 *.app
+
+# editor tmp files
+*~
+*.swp
+session.vim
+
+# IDE project meta files
+.cproject
+.project
+build/
+dist/
+.settings/
+.dep.inc
+
+# ctags file
+tags
+
+runme
+
