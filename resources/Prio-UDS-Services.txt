@@ -1,0 +1,40 @@
+#+TITLE: UDS Services
+
+This is a list of UDS Services, sorted by priority/simplicity.
+
+* Basic Request/Response
+** TesterPresent (0x3E)
+** ReadDataByIdentifier (0x22)
+* Session Handling
+** DiagnosticSessionControl (0x10)
+** ECUReset (0x11)
+* Fault Memory Management
+** ClearDiagnosticInformation (0x14)
+** ReadDTCInformation (0x19)
+   - Subservice 0x02 und 0x06
+* Unlocking restrictions
+** SecurityAccess (0x27)
+* Concurrent job processing
+** RoutineControl (0x31)
+* Software Update / Calibration
+** RequestDownload (0x34)
+** TransferData (0x36)
+** RequestTransferExit(0x37)
+** WriteDataByIdentifier (0x2E)
+** InputOutputControlByIdentifier (0x2F)
+* Out of Scope
+  These services are out of scope for this project
+** AccessTimingParameter (0x83)
+** SecuredDataTransmission (0x84)
+** ReadMemoryByAddress (0x23)
+** ReadScalingDataByIdentifier (0x24)
+** ReadDataByPeriodicIdentifier (0x2A)
+** DynamicallyDefineDataIdentifier (0x2C)
+** LinkControl (0x87)
+** ResponseOnEvent (0x86)
+** WriteMemoryByAddress (0x3D)
+** RequestUpload (0x35)
+** RequestFileTransfer (0x38)
+** ControlDTCSetting (0x85)
+** CommunicationControl (0x28)
+
